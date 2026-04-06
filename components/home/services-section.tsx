@@ -5,7 +5,7 @@ import { ChevronRight, Home, Building, Check } from "lucide-react"
 const vendorBenefits = [
   "Compare estate agent fees across Ireland markets",
   "Access verified sales performance data",
-  "Receive competitive offers within 48 hours",
+  "Receive competitive offers within 24 hours",
   "Transparent commission benchmarking",
   "Risk-free agent selection process",
 ]

@@ -65,13 +65,13 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-primary-foreground/80">
-              Ireland&apos;s postcode agent comparison tool. Compare verified estate and letting agents, review fee ranges and speed by area, and get 4 competitive offers.
+              Ireland&apos;s agent comparison tool. Compare verified estate and letting agents, review fee ranges and performance by area, and receive 4 competitive offers.
             </p>
             <div className="mt-6 flex items-center gap-2 text-sm">
               <Shield className="h-4 w-4 text-accent" />
               <span className="text-primary-foreground/80">All Agents PSRA Verified</span>
             </div>
-            <div className="mt-3 text-sm text-primary-foreground/80">4 quotes in 48hrs | 18% average savings</div>
+            <div className="mt-3 text-sm text-primary-foreground/80">4 quotes in 24hrs</div>
 
             {/* Contact Info */}
             <div className="mt-6 space-y-2">
@@ -89,7 +89,7 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-2 text-sm text-primary-foreground/80">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>Ireland</span>
+                <span>Made with love in Dublin, Ireland.</span>
               </div>
             </div>
           </div>

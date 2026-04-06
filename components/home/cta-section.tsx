@@ -13,12 +13,12 @@ export function CTASection() {
                 Ready to Optimise Your Property Transaction?
               </h2>
               <p className="mt-4 text-lg text-primary-foreground/80 leading-relaxed">
-                Submit your property details today and receive competitive offers from verified Ireland agents within 48 hours. No obligation, no hidden fees.
+                Submit your property details today and receive competitive offers from verified Ireland agents within 24 hours. No obligation, completely free.
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button size="lg" variant="secondary" asChild>
-                  <Link href="/#hero-form">
+                  <Link href="#hero-form">
                     Request Agent Offers
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </Link>

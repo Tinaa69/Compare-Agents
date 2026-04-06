@@ -51,7 +51,7 @@ const faqCategories = [
       },
       {
         question: "How long does the process take?",
-        answer: "Most users receive agent offers within 48 hours of submission. The matching process itself takes approximately 24 hours, with agents then preparing their proposals. You can take as long as you need to review offers and make a decision—there is no time pressure.",
+        answer: "Most users receive agent offers within 24 hours of submission. You can take as long as you need to review offers and make a decision; there is no time pressure.",
       },
       {
         question: "Am I obligated to choose an agent?",

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const sellingPoints = [
   "Postcode-level fee benchmarks across active Ireland markets",
-  "4 PSRA-verified agent quotes within 48 hours",
+  "4 PSRA-verified agent quotes within 24 hours",
   "Transparent fee, speed, and local-sales comparison",
 ]
 

@@ -4,19 +4,19 @@ const steps = [
   {
     step: "01",
     title: "Submit Property Details",
-    description: "Provide your property information including location, type, estimated value, and timeline. Takes less than 3 minutes.",
+    description: "Provide your property information including location, type, estimated value, size and condition.",
     icon: FileText,
   },
   {
     step: "02",
     title: "Receive Agent Shortlist",
-    description: "Our algorithm matches you with verified agents based on their performance in your specific area and property segment.",
+    description: "Receive up to 4 offers from verified agents within 24 hours, tailored to your area and property type.",
     icon: Users,
   },
   {
     step: "03",
     title: "Compare & Select",
-    description: "Review competitive offers with transparent fee structures, performance metrics, and service scope. Make an informed decision.",
+    description: "Review competitive offers with transparent fee structures, marketing strategy, sales valuation and service scope. Make an informed decision.",
     icon: CheckCircle,
   },
 ]

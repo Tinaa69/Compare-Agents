@@ -40,7 +40,7 @@ const benefits = [
   {
     icon: Clock,
     title: "48-Hour Response",
-    description: "Receive competitive offers from matched agents within 48 hours of submitting your property details.",
+    description: "Receive competitive offers from matched agents within 24 hours of submitting your property details.",
   },
 ]
 

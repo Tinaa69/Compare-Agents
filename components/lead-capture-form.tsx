@@ -104,7 +104,7 @@ export function LeadCaptureForm() {
         </h3>
         <p className="mt-3 text-muted-foreground">
           Thank you for your enquiry. Our team will review your property details and 
-          matched agents will be in touch within 48 hours with competitive offers.
+          matched agents will be in touch within 24 hours with competitive offers.
         </p>
         <p className="mt-4 text-sm text-muted-foreground">
           Reference number: CA-{Date.now().toString(36).toUpperCase()}

@@ -7,7 +7,7 @@ import { CheckCircle2, ChevronRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Thank You | CompareAgents.ie",
-  description: "Thanks for your enquiry. Your matched Ireland agents will review your details and contact you within 48 hours.",
+  description: "Thanks for your enquiry. Your matched Ireland agents will review your details and contact you within 24 hours.",
 }
 
 const nextSteps = [
@@ -28,7 +28,7 @@ export default function ThankYouPage() {
               <CheckCircle2 className="h-8 w-8 text-accent" />
             </div>
             <h1 className="mt-6 font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-5xl">
-              Thanks! 4 Ireland agents contacting you in 48hrs.
+              Thanks! 4 Ireland agents contacting you in 24hrs.
             </h1>
             <p className="mt-4 text-lg text-primary-foreground/80">
               Your request is in. The next step is simple: compare the quotes and choose only if one feels right.

@@ -222,7 +222,7 @@ export default function ProcessPage() {
                 </div>
                 <div className="rounded-xl border border-border bg-card p-6 text-center">
                   <BarChart3 className="mx-auto h-8 w-8 text-accent" />
-                  <span className="mt-4 block font-serif text-3xl font-bold text-foreground">48 hrs</span>
+                  <span className="mt-4 block font-serif text-3xl font-bold text-foreground">24 hrs</span>
                   <span className="text-sm text-muted-foreground">Receive offers</span>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-6 text-center">

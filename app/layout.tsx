@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Compare Ireland Estate Agents | Postcode Fee Comparison | CompareAgents.ie',
-  description: 'Compare verified estate and letting agents across Ireland with postcode-level fee data, transparent scoring, and 4 PSRA-verified quotes in 48 hours.',
+  description: 'Compare verified estate and letting agents across Ireland with postcode-level fee data, transparent scoring, and 4 PSRA-verified quotes in 24 hours.',
   generator: 'v0.app',
   icons: {
     icon: [
