@@ -13,7 +13,7 @@ import { ChevronRight, HelpCircle, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "FAQs | Common Questions | CompareAgents.ie",
-  description: "Frequently asked questions about CompareAgents.ie, our agent comparison service, PSRA compliance, and how we help Dublin property owners.",
+  description: "Frequently asked questions about CompareAgents.ie, our agent comparison service, PSRA compliance, and how we help Ireland property owners.",
 }
 
 const faqCategories = [
@@ -22,7 +22,7 @@ const faqCategories = [
     faqs: [
       {
         question: "What is CompareAgents.ie?",
-        answer: "CompareAgents.ie is a data-led comparison platform that helps Dublin property owners find and compare estate and letting agents. We analyse agent performance data, fee structures, and client feedback to match you with agents best suited to your specific requirements. Our service is completely free for property owners.",
+        answer: "CompareAgents.ie is a data-led comparison platform that helps Ireland property owners find and compare estate and letting agents. We analyse agent performance data, fee structures, and client feedback to match you with agents best suited to your specific requirements. Our service is completely free for property owners.",
       },
       {
         question: "How is CompareAgents.ie different from other services?",
@@ -34,7 +34,7 @@ const faqCategories = [
       },
       {
         question: "What areas do you cover?",
-        answer: "We currently cover Dublin and the Greater Dublin Area, including all Dublin postcodes (D1-D24), Dun Laoghaire-Rathdown, Fingal, and South Dublin County. We plan to expand to other Irish cities in the future.",
+        answer: "We match property owners with verified agents across Ireland, covering major cities, counties, and commuter markets. Coverage continues to expand as new verified agents are onboarded.",
       },
     ],
   },
@@ -97,8 +97,8 @@ const faqCategories = [
     category: "Fees & Costs",
     faqs: [
       {
-        question: "What are typical estate agent fees in Dublin?",
-        answer: "Estate agent fees in Dublin typically range from 1.0% to 1.75% of the sale price (plus VAT), depending on the property value, location, and agency terms. Higher-value properties often attract lower percentage rates. Our comparison service helps you understand the market rate for your specific property and secure competitive terms.",
+        question: "What are typical estate agent fees in Ireland?",
+        answer: "Estate agent fees in Ireland typically range from 1.0% to 1.75% of the sale price (plus VAT), depending on the property value, location, and agency terms. Higher-value properties often attract lower percentage rates. Our comparison service helps you understand the market rate for your specific property and secure competitive terms.",
       },
       {
         question: "What are typical letting agent fees?",
@@ -129,7 +129,7 @@ export default function FAQsPage() {
                 Frequently Asked Questions
               </h1>
               <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
-                Find answers to common questions about our agent comparison service, compliance standards, and how we help Dublin property owners.
+                Find answers to common questions about our agent comparison service, compliance standards, and how we help Ireland property owners.
               </p>
             </div>
           </div>

@@ -17,15 +17,15 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Landlord Services | Compare Letting Agents Dublin | CompareAgents.ie",
-  description: "Compare letting and property management agents in Dublin. Optimise rental yield with transparent fee comparison, tenant vetting standards, and management efficiency metrics.",
+  title: "Landlord Services | Compare Letting Agents Ireland | CompareAgents.ie",
+  description: "Compare letting and property management agents across Ireland. Optimise rental yield with transparent fee comparison, tenant vetting standards, and management efficiency metrics.",
 }
 
 const benefits = [
   {
     icon: Percent,
     title: "Management Fee Benchmarking",
-    description: "Compare management fees across Dublin agents, typically ranging from 6-10% of rental income plus VAT.",
+    description: "Compare management fees across Ireland agents, typically ranging from 6-10% of rental income plus VAT.",
   },
   {
     icon: UserCheck,
@@ -98,7 +98,7 @@ export default function LandlordsPage() {
                 Compare Letting Agents for Optimal Rental Yield
               </h1>
               <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
-                Maximise your investment returns with data-led letting agent comparison. Evaluate management fees, tenant quality standards, and operational efficiency across Dublin agents.
+                Maximise your investment returns with data-led letting agent comparison. Evaluate management fees, tenant quality standards, and operational efficiency across Ireland agents.
               </p>
               <div className="mt-10">
                 <Button size="lg" variant="secondary" asChild>
@@ -150,7 +150,7 @@ export default function LandlordsPage() {
                 Compare Service Packages
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Understand the typical service levels and fee structures available in the Dublin market.
+                Understand the typical service levels and fee structures available in the Ireland market.
               </p>
             </div>
             <div className="mt-16 grid gap-6 lg:grid-cols-3">
