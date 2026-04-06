@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronRight, Home, Building, Check } from "lucide-react"
 
 const vendorBenefits = [
-  "Compare estate agent fees across Dublin postcodes",
+  "Compare estate agent fees across Ireland markets",
   "Access verified sales performance data",
   "Receive competitive offers within 48 hours",
   "Transparent commission benchmarking",
@@ -52,7 +52,7 @@ export function ServicesSection() {
             </div>
 
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Selling your Dublin property? Compare estate agents based on proven sales velocity, achieved prices, and transparent fee structures. Our methodology identifies agents with track records in your specific area.
+              Selling your property in Ireland? Compare estate agents based on proven sales velocity, achieved prices, and transparent fee structures. Our methodology identifies agents with track records in your specific area.
             </p>
 
             <ul className="mt-6 space-y-3">

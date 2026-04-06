@@ -3,52 +3,13 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Building2, ChevronRight } from "lucide-react"
-import { cn } from "@/lib/utils"
-
-const services = [
-  {
-    title: "Vendor Services",
-    href: "/vendors",
-    description: "Compare estate agents for property sales. Optimise fees and execution.",
-  },
-  {
-    title: "Landlord Services",
-    href: "/landlords",
-    description: "Compare letting agents for rental properties. Maximise yield and tenant quality.",
-  },
-]
-
-const resources = [
-  {
-    title: "Agent Directory",
-    href: "/agents",
-    description: "Browse verified PSRA-licensed agents with performance metrics.",
-  },
-  {
-    title: "Find by Area",
-    href: "/areas",
-    description: "Compare estate agents in your Dublin neighbourhood.",
-  },
-  {
-    title: "How It Works",
-    href: "/process",
-    description: "Our data-led comparison methodology explained.",
-  },
-  {
-    title: "FAQs",
-    href: "/faqs",
-    description: "Common questions about our service and compliance.",
-  },
+const navigationItems = [
+  { title: "Compare Agents", href: "/#hero-form" },
+  { title: "How it Works", href: "/process" },
+  { title: "Ireland Areas", href: "/areas" },
+  { title: "Agents", href: "/agents" },
 ]
 
 export function Header() {
@@ -58,7 +19,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75">
       <div className="border-b border-border/60 bg-secondary/70">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-xs text-muted-foreground sm:px-6 lg:px-8">
-          <p className="font-medium text-foreground">Free comparison for Dublin property owners</p>
+          <p className="font-medium text-foreground">Free comparison for Ireland property owners</p>
           <p className="hidden sm:block">PSRA-verified agents. No obligation to proceed.</p>
         </div>
       </div>
@@ -80,59 +41,22 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent">Services</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                  {services.map((item) => (
-                    <ListItem key={item.title} title={item.title} href={item.href}>
-                      {item.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent">Resources</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                  {resources.map((item) => (
-                    <ListItem key={item.title} title={item.title} href={item.href}>
-                      {item.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link 
-                  href="/about" 
-                  className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground focus:bg-muted focus:text-foreground focus:outline-none"
-                >
-                  About
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link 
-                  href="/contact" 
-                  className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground focus:bg-muted focus:text-foreground focus:outline-none"
-                >
-                  Contact
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+        <nav className="hidden items-center gap-2 lg:flex">
+          {navigationItems.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+            >
+              {item.title}
+            </Link>
+          ))}
+        </nav>
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex lg:items-center lg:gap-4">
           <Button asChild className="shadow-sm">
-            <Link href="/contact">
+            <Link href="/#hero-form">
               Compare Agents
               <ChevronRight className="ml-1 h-4 w-4" />
             </Link>
@@ -150,8 +74,8 @@ export function Header() {
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <nav className="flex flex-col gap-6 pt-6">
               <div className="flex flex-col gap-3">
-                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Services</span>
-                {services.map((item) => (
+                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Menu</span>
+                {navigationItems.map((item) => (
                   <Link
                     key={item.title}
                     href={item.href}
@@ -161,40 +85,10 @@ export function Header() {
                     {item.title}
                   </Link>
                 ))}
-              </div>
-              <div className="flex flex-col gap-3">
-                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Resources</span>
-                {resources.map((item) => (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-lg font-medium text-foreground hover:text-accent transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-              </div>
-              <div className="flex flex-col gap-3">
-                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Company</span>
-                <Link
-                  href="/about"
-                  onClick={() => setMobileOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-accent transition-colors"
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-accent transition-colors"
-                >
-                  Contact
-                </Link>
               </div>
               <div className="pt-4 border-t border-border">
                 <Button asChild className="w-full">
-                  <Link href="/contact" onClick={() => setMobileOpen(false)}>
+                  <Link href="/#hero-form" onClick={() => setMobileOpen(false)}>
                     Compare Agents
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </Link>
@@ -205,38 +99,5 @@ export function Header() {
         </Sheet>
       </div>
     </header>
-  )
-}
-
-const ListItem = ({
-  className,
-  title,
-  children,
-  href,
-  ...props
-}: {
-  className?: string
-  title: string
-  children: React.ReactNode
-  href: string
-}) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <Link
-          href={href}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-foreground focus:bg-muted focus:text-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </Link>
-      </NavigationMenuLink>
-    </li>
   )
 }

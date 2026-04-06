@@ -8,15 +8,15 @@ const popularCities = [
   { name: "Limerick", href: "/agents?location=limerick", count: 24 },
 ]
 
-const dublinAreas = [
-  { name: "Dublin 4", href: "/agents?location=dublin-4" },
-  { name: "Dublin 6", href: "/agents?location=dublin-6" },
-  { name: "Dublin 2", href: "/agents?location=dublin-2" },
+const keyMarkets = [
+  { name: "South Dublin", href: "/agents?location=south-dublin" },
+  { name: "North Dublin", href: "/agents?location=north-dublin" },
   { name: "Dun Laoghaire", href: "/agents?location=dun-laoghaire" },
   { name: "Blackrock", href: "/agents?location=blackrock" },
-  { name: "Dalkey", href: "/agents?location=dalkey" },
-  { name: "Howth", href: "/agents?location=howth" },
-  { name: "Malahide", href: "/agents?location=malahide" },
+  { name: "Cork City", href: "/agents?location=cork-city" },
+  { name: "Galway City", href: "/agents?location=galway-city" },
+  { name: "Limerick City", href: "/agents?location=limerick-city" },
+  { name: "Waterford City", href: "/agents?location=waterford-city" },
 ]
 
 const counties = [
@@ -41,7 +41,7 @@ export function LocationsSection() {
             Find Agents in Your Area
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            We partner with verified estate and letting agents across Ireland, with particular strength in the Greater Dublin Area.
+            We partner with verified estate and letting agents across Ireland, from city centres to county markets.
           </p>
         </div>
 
@@ -72,14 +72,14 @@ export function LocationsSection() {
           </div>
         </div>
 
-        {/* Dublin Areas & Counties */}
+        {/* Key Markets & Counties */}
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-              Dublin Areas
+              Key Markets
             </h3>
             <div className="flex flex-wrap gap-2">
-              {dublinAreas.map((area) => (
+              {keyMarkets.map((area) => (
                 <Link
                   key={area.name}
                   href={area.href}

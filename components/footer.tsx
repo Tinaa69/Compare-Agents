@@ -32,9 +32,9 @@ const footerLinks = {
     { name: "How It Works", href: "/process" },
     { name: "Agent Directory", href: "/agents" },
     { name: "FAQs", href: "/faqs" },
-    { name: "Estate Agent Fees", href: "/insights/estate-agent-fees" },
-    { name: "Stamp Duty Calculator", href: "/tools/stamp-duty" },
-    { name: "Market Insights", href: "/insights" },
+    { name: "Sell House Ireland", href: "/sell-house-ireland" },
+    { name: "Dublin 6 Agents", href: "/dublin-6-estate-agents" },
+    { name: "Dublin 4 Fees", href: "/dublin-4-agent-fees" },
   ],
   articles: [
     { name: "How Long to Sell a House in Ireland?", href: "/insights/how-long-to-sell" },
@@ -64,14 +64,14 @@ export function Footer() {
                 CompareAgents<span className="text-accent">.ie</span>
               </span>
             </Link>
-            <p className="mt-4 text-sm text-primary-foreground/80 leading-relaxed max-w-xs">
-              Compare verified estate and letting agents across Ireland. 
-              Get up to 4 competitive offers and choose the right agent for your property.
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-primary-foreground/80">
+              Ireland&apos;s postcode agent comparison tool. Compare verified estate and letting agents, review fee ranges and speed by area, and get 4 competitive offers.
             </p>
             <div className="mt-6 flex items-center gap-2 text-sm">
               <Shield className="h-4 w-4 text-accent" />
               <span className="text-primary-foreground/80">All Agents PSRA Verified</span>
             </div>
+            <div className="mt-3 text-sm text-primary-foreground/80">4 quotes in 48hrs | 18% average savings</div>
 
             {/* Contact Info */}
             <div className="mt-6 space-y-2">
@@ -89,7 +89,7 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-2 text-sm text-primary-foreground/80">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>Dublin, Ireland</span>
+                <span>Ireland</span>
               </div>
             </div>
           </div>

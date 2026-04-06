@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -26,32 +27,22 @@ const propertyTypes = [
   "Mixed Use",
 ]
 
-const dublinAreas = [
-  "Dublin 1",
-  "Dublin 2",
-  "Dublin 3",
-  "Dublin 4",
-  "Dublin 5",
-  "Dublin 6",
-  "Dublin 6W",
-  "Dublin 7",
-  "Dublin 8",
-  "Dublin 9",
-  "Dublin 10",
-  "Dublin 11",
-  "Dublin 12",
-  "Dublin 13",
-  "Dublin 14",
-  "Dublin 15",
-  "Dublin 16",
-  "Dublin 17",
-  "Dublin 18",
-  "Dublin 20",
-  "Dublin 22",
-  "Dublin 24",
-  "South Dublin (Dun Laoghaire-Rathdown)",
-  "Fingal",
-  "South Dublin County",
+const irelandAreas = [
+  "Dublin",
+  "Cork",
+  "Galway",
+  "Limerick",
+  "Waterford",
+  "Kilkenny",
+  "Wexford",
+  "Wicklow",
+  "Kildare",
+  "Meath",
+  "Clare",
+  "Sligo",
+  "Mayo",
+  "Donegal",
+  "Nationwide",
 ]
 
 const serviceTypes = [
@@ -91,14 +82,15 @@ const rentalRanges = [
 ]
 
 export function LeadCaptureForm() {
+  const router = useRouter()
   const [submitted, setSubmitted] = useState(false)
   const [serviceType, setServiceType] = useState("")
   const [consent, setConsent] = useState(false)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // In a real app, this would submit to an API
     setSubmitted(true)
+    router.push("/thank-you")
   }
 
   if (submitted) {
@@ -171,10 +163,10 @@ export function LeadCaptureForm() {
             <Label htmlFor="location">Location / Area *</Label>
             <Select required>
               <SelectTrigger id="location">
-                <SelectValue placeholder="Select Dublin area" />
+                <SelectValue placeholder="Select Ireland area" />
               </SelectTrigger>
               <SelectContent>
-                {dublinAreas.map((area) => (
+                {irelandAreas.map((area) => (
                   <SelectItem key={area} value={area.toLowerCase().replace(/\s+/g, '-')}>
                     {area}
                   </SelectItem>

@@ -7,8 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MapPin, ChevronRight, Building2, TrendingUp } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Estate Agents by Area | Dublin Agent Comparison | CompareAgents.ie",
-  description: "Find and compare estate agents in your Dublin area. Browse agents by location with local market expertise and performance data.",
+  title: "Estate Agents by Area | Ireland Agent Comparison | CompareAgents.ie",
+  description: "Find and compare estate agents in your area across Ireland. Browse agents by location with local market expertise and performance data.",
 }
 
 const dublinAreas = [
@@ -93,7 +93,7 @@ export default function AreasPage() {
                 Find Estate Agents in Your Area
               </h1>
               <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
-                Compare local estate agents with proven track records in your Dublin neighbourhood. 
+                Compare local estate agents with proven track records across Ireland.
                 Our data-driven approach helps you find agents who know your market best.
               </p>
               <div className="mt-8">
@@ -118,7 +118,7 @@ export default function AreasPage() {
               </div>
               <div>
                 <p className="font-serif text-3xl font-bold text-foreground">45+</p>
-                <p className="mt-1 text-sm text-muted-foreground">Dublin Areas Covered</p>
+                <p className="mt-1 text-sm text-muted-foreground">Ireland Areas Covered</p>
               </div>
               <div>
                 <p className="font-serif text-3xl font-bold text-foreground">15-25%</p>

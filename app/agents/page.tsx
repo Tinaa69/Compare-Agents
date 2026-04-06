@@ -18,7 +18,7 @@ import { Input } from "@/components/ui/input"
 
 export const metadata: Metadata = {
   title: "Agent Directory | PSRA Verified Estate & Letting Agents | CompareAgents.ie",
-  description: "Browse verified PSRA-licensed estate and letting agents in Dublin. Access performance metrics, fee structures, and client ratings.",
+  description: "Browse verified PSRA-licensed estate and letting agents across Ireland. Access performance metrics, fee structures, and client ratings.",
 }
 
 // Sample agent data for demonstration
@@ -107,17 +107,17 @@ const performanceMetrics = [
   {
     metric: "Commission Fee",
     description: "Percentage of final sale price charged as commission. Rates vary by property value and agency terms.",
-    benchmark: "Dublin average: 1.25%",
+    benchmark: "Ireland average: 1.25%",
   },
   {
     metric: "Sales Velocity",
     description: "Average number of days from listing to sale agreed. Faster isn't always better—price optimisation matters.",
-    benchmark: "Dublin average: 42 days",
+    benchmark: "Ireland average: 42 days",
   },
   {
     metric: "Price Achievement",
     description: "Final sale price as a percentage of asking price. High performers consistently achieve 97%+ of asking.",
-    benchmark: "Dublin average: 97.3%",
+    benchmark: "Ireland average: 97.3%",
   },
   {
     metric: "Client Retention",
@@ -128,7 +128,7 @@ const performanceMetrics = [
 
 const onboardingRequirements = [
   "Valid PSRA licence with no regulatory sanctions",
-  "Minimum 3 years active trading in Dublin market",
+  "Minimum 3 years active trading in Ireland market",
   "Professional indemnity insurance confirmation",
   "Commitment to transparent fee disclosure",
   "Quarterly performance data submission",
@@ -149,7 +149,7 @@ export default function AgentsPage() {
                 <span className="text-sm text-primary-foreground">Agent Directory</span>
               </div>
               <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl text-balance">
-                PSRA Verified Dublin Agents
+                PSRA Verified Ireland Agents
               </h1>
               <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
                 Browse our directory of verified estate and letting agents. Access performance data, fee structures, and client ratings to inform your comparison.

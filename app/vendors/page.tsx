@@ -17,8 +17,8 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Vendor Services | Compare Estate Agents Dublin | CompareAgents.ie",
-  description: "Compare estate agents for your Dublin property sale. Access performance data, fee benchmarks, and receive competitive offers from PSRA-verified agents.",
+  title: "Vendor Services | Compare Estate Agents Ireland | CompareAgents.ie",
+  description: "Compare estate agents for your Ireland property sale. Access performance data, fee benchmarks, and receive competitive offers from PSRA-verified agents.",
 }
 
 const benefits = [
@@ -112,7 +112,7 @@ export default function VendorsPage() {
                 <span className="text-sm text-primary-foreground">Property Sales</span>
               </div>
               <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl text-balance">
-                Compare Estate Agents for Your Dublin Property Sale
+                Compare Estate Agents for Your Ireland Property Sale
               </h1>
               <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
                 Access performance data, fee benchmarks, and receive competitive offers from verified estate agents. Achieve optimal outcomes for your property transaction.
@@ -184,7 +184,7 @@ export default function VendorsPage() {
               </div>
               <div className="rounded-xl border border-border bg-card p-6 lg:p-8">
                 <h3 className="font-serif text-xl font-semibold text-card-foreground">
-                  Dublin Market Benchmarks
+                  Ireland Market Benchmarks
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Current average performance metrics by area (Q1 2026)

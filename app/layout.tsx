@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'CompareAgents.ie | Compare Dublin Estate & Letting Agents',
-  description: 'Objectively compare verified estate and letting agents in Dublin. Achieve 15-25% fee savings with data-led agent comparison for property sales and lettings.',
+  title: 'Compare Ireland Estate Agents | Postcode Fee Comparison | CompareAgents.ie',
+  description: 'Compare verified estate and letting agents across Ireland with postcode-level fee data, transparent scoring, and 4 PSRA-verified quotes in 48 hours.',
   generator: 'v0.app',
   icons: {
     icon: [
