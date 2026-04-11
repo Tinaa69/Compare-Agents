@@ -24,9 +24,9 @@ const processSteps = [
   {
     number: "01",
     title: "Submit Your Property Details",
-    description: "Complete our brief online form with your property information, including type, location, estimated value or rental expectation, and your preferred timeline.",
+    description: "Complete our brief online form with your property information, including type, location contact details and your preferred timeline.",
     details: [
-      "Takes less than 3 minutes to complete",
+      "Takes less than 1 minute to complete",
       "All information kept strictly confidential",
       "No obligation to proceed at any stage",
     ],
@@ -39,7 +39,7 @@ const processSteps = [
     details: [
       "Area-specific performance analysis",
       "Property type expertise matching",
-      "Fee structure alignment",
+      "Competitive agent fees",
     ],
     icon: Search,
   },
@@ -57,18 +57,18 @@ const processSteps = [
   {
     number: "04",
     title: "Compare with Confidence",
-    description: "Receive a comprehensive comparison of all offers with performance metrics, enabling an objective, data-informed decision.",
+    description: "Receive a detailed comparison of all offers with performance metrics, enabling an objective, data-informed decision.",
     details: [
-      "Side-by-side offer comparison",
-      "Historical performance data included",
-      "Our team available for guidance",
+      "Comprehensive agents comparison",
+      "Performance and marketing strategy data",
+      "Local property market analysis",
     ],
     icon: Users,
   },
   {
     number: "05",
     title: "Select & Proceed",
-    description: "Choose the agent that best fits your requirements. We facilitate the introduction and remain available throughout your transaction.",
+    description: "Choose the agent that best fits your requirements. We facilitate the introduction and remain confident you are in very safe hands.",
     details: [
       "Direct engagement with chosen agent",
       "No fees from CompareAgents.ie",
@@ -212,7 +212,7 @@ export default function ProcessPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-xl border border-border bg-card p-6 text-center">
                   <Clock className="mx-auto h-8 w-8 text-accent" />
-                  <span className="mt-4 block font-serif text-3xl font-bold text-foreground">3 min</span>
+                  <span className="mt-4 block font-serif text-3xl font-bold text-foreground">1 min</span>
                   <span className="text-sm text-muted-foreground">Form completion</span>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-6 text-center">
