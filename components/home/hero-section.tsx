@@ -30,7 +30,7 @@ export function HeroSection() {
           </div>
 
           <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
-            Compare Ireland estate agents and choose with confidence
+            Compare Irish estate agents and choose with confidence
           </h1>
           <p className="mt-4 text-lg text-primary-foreground/80 sm:text-xl">
             Receive up to 4 offers from verified agents, compare fees and performance side by side, and choose the right fit for you and your property.

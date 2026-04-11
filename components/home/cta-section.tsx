@@ -13,7 +13,7 @@ export function CTASection() {
                 Ready to Optimise Your Property Transaction?
               </h2>
               <p className="mt-4 text-lg text-primary-foreground/80 leading-relaxed">
-                Submit your property details today and receive competitive offers from verified Ireland agents within 24 hours. No obligation, completely free.
+                Submit your property details today and receive competitive offers from verified Irish agents within 24 hours. No obligation, completely free.
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -37,7 +37,7 @@ export function CTASection() {
               </div>
 
               <p className="mt-8 text-sm text-primary-foreground/60">
-                Average response time: 24 hours. Service available for properties across Ireland.
+                Average response time: 24 hours. Service available for properties across Irish.
               </p>
             </div>
           </div>

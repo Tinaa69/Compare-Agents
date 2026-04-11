@@ -6,7 +6,7 @@ import { Shield, Lock, CheckCircle, Phone, Mail, MapPin } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Request Agent Offers | CompareAgents.ie",
-  description: "Submit your Ireland property details and receive competitive offers from verified estate and letting agents within 24 hours.",
+  description: "Submit your Irish property details and receive competitive offers from verified estate and letting agents within 24 hours.",
 }
 
 const trustSignals = [
@@ -40,7 +40,7 @@ export default function ContactPage() {
                 Request Agent Offers
               </h1>
               <p className="mt-4 text-primary-foreground/80 leading-relaxed">
-                Submit your property details below and receive competitive offers from verified Ireland agents within 24 hours.
+                Submit your property details below and receive competitive offers from verified Irish agents within 24 hours.
               </p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function ContactPage() {
                     </a>
                     <div className="flex items-start gap-2 text-sm text-muted-foreground">
                       <MapPin className="h-4 w-4 shrink-0 text-accent" />
-                      <span>Ireland</span>
+                      <span>Irish</span>
                     </div>
                   </div>
                 </div>

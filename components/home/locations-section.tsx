@@ -41,7 +41,7 @@ export function LocationsSection() {
             Find Agents in Your Area
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            We partner with verified estate and letting agents across Ireland, from city centres to county markets.
+            We partner with verified estate and letting agents across Irish, from city centres to county markets.
           </p>
         </div>
 

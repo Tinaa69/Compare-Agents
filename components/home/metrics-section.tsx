@@ -24,7 +24,7 @@ const metrics = [
   {
     value: "2,400+",
     label: "Properties Matched",
-    description: "Successful agent connections across Ireland since launch",
+    description: "Successful agent connections across Irish since launch",
     icon: Users,
   },
 ]
@@ -42,7 +42,7 @@ export function MetricsSection() {
             Results That Speak for Themselves
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            Our platform delivers measurable outcomes for property owners across Ireland.
+            Our platform delivers measurable outcomes for property owners across Irish.
           </p>
         </div>
 
