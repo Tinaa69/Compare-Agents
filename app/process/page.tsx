@@ -17,7 +17,7 @@ import {
 
 export const metadata: Metadata = {
   title: "How It Works | Our Process | CompareAgents.ie",
-  description: "Learn how CompareAgents.ie uses data-led methodology to match Irish property owners with the best-performing estate and letting agents.",
+  description: "Learn how CompareAgents.ie uses data-led methodology to match Ireland property owners with the best-performing estate and letting agents.",
 }
 
 const processSteps = [

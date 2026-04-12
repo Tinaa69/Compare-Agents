@@ -18,11 +18,11 @@ import {
 
 export const metadata: Metadata = {
   title: "About Us | CompareAgents.ie",
-  description: "Learn about Compare Agents - a proudly Irish company with 15+ years of property industry experience. We connect serious sellers with trusted estate agents nationwide.",
+  description: "Learn about Compare Agents - a proudly Ireland-owned company with 15+ years of property industry experience. We connect serious sellers with trusted estate agents nationwide.",
 }
 
 const whyChooseUs = [
-  "Proudly Irish, built for the local market",
+  "Proudly Ireland-owned, built for the local market",
   "15+ years of industry experience",
   "Genuine leads only, no spam",
   "Designed for both agents and sellers",
@@ -41,7 +41,7 @@ export default function AboutPage() {
                 About Us
               </h1>
               <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
-                Compare Agents is a proudly Irish company built on over 15 years of experience in the property industry.
+                Compare Agents is a proudly Ireland-owned company built on over 15 years of experience in the property industry.
               </p>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function AboutPage() {
             <div className="mx-auto max-w-3xl">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Having worked closely with estate agents and sellers across Irish, we understand one thing clearly: quality lead generation is essential. Our goal is simple: to connect serious property sellers with trusted estate agents nationwide.
+                  Having worked closely with estate agents and sellers across Ireland, we understand one thing clearly: quality lead generation is essential. Our goal is simple: to connect serious property sellers with trusted estate agents nationwide.
                 </p>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                 Quality Over Quantity
               </h2>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                To deliver real, high-quality leads to estate agents across Irish while helping sellers make smarter decisions.
+                To deliver real, high-quality leads to estate agents across Ireland while helping sellers make smarter decisions.
               </p>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 We focus on quality over quantity, ensuring every enquiry has real intent behind it.

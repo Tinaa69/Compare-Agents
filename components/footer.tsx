@@ -30,14 +30,15 @@ const footerLinks = {
   ],
   resources: [
     { name: "How It Works", href: "/process" },
+    { name: "Partner with Us", href: "/partners" },
     { name: "About Us", href: "/about" },
     { name: "FAQs", href: "/faqs" },
-    { name: "Sell House Irish", href: "/sell-house-ireland" },
+    { name: "Sell House Ireland", href: "/sell-house-ireland" },
     { name: "Dublin 6 Agents", href: "/dublin-6-estate-agents" },
     { name: "Dublin 4 Fees", href: "/dublin-4-agent-fees" },
   ],
   articles: [
-    { name: "How Long to Sell a House in Irish?", href: "/insights/how-long-to-sell" },
+    { name: "How Long to Sell a House in Ireland?", href: "/insights/how-long-to-sell" },
     { name: "What Does Sale Agreed Mean?", href: "/insights/sale-agreed" },
     { name: "Understanding Conveyancing", href: "/insights/conveyancing" },
     { name: "Property Price Index Explained", href: "/insights/price-index" },
@@ -65,13 +66,16 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-primary-foreground/80">
-              Irish&apos;s agent comparison tool. Compare verified estate and letting agents, review fee ranges and performance by area, and receive 4 competitive offers.
+              Compare verified real estate agents, review fee range, marketing strategy and performance metrics, receive 4 competitive offers.
             </p>
             <div className="mt-6 flex items-center gap-2 text-sm">
               <Shield className="h-4 w-4 text-accent" />
               <span className="text-primary-foreground/80">All Agents PSRA Verified</span>
             </div>
-            <div className="mt-3 text-sm text-primary-foreground/80">4 quotes in 24hrs</div>
+            <div className="mt-3 flex items-center gap-2 text-sm text-primary-foreground/80">
+              <span className="text-accent">✓</span>
+              <span>4 quotes in 24hrs</span>
+            </div>
 
             {/* Contact Info */}
             <div className="mt-6 space-y-2">
@@ -89,7 +93,7 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-2 text-sm text-primary-foreground/80">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>Made with love in Dublin, Irish.</span>
+                <span>Made with love in Dublin, Ireland.</span>
               </div>
             </div>
           </div>

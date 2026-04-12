@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { MapPin, ChevronRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Coverage | Irish Agent Comparison | CompareAgents.ie",
+  title: "Coverage | Ireland Agent Comparison | CompareAgents.ie",
   description: "Find and compare estate agents in your area. Browse agents by location with local market expertise and performance data.",
 }
 

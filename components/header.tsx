@@ -8,6 +8,7 @@ import { Menu, Building2, ChevronRight } from "lucide-react"
 const navigationItems = [
   { title: "Compare Agents", href: "/#hero-form" },
   { title: "How it Works", href: "/process" },
+  { title: "Partner with Us", href: "/partners" },
   { title: "About Us", href: "/about" },
   { title: "Coverage", href: "/areas" },
 ]
@@ -19,7 +20,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75">
       <div className="border-b border-border/60 bg-secondary/70">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-xs text-muted-foreground sm:px-6 lg:px-8">
-          <p className="font-medium text-foreground">Free comparison for Irish property owners</p>
+          <p className="font-medium text-foreground">Free comparison for Ireland property owners</p>
           <p className="hidden sm:block">PSRA-verified agents. No obligation to proceed.</p>
         </div>
       </div>
