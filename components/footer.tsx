@@ -30,6 +30,7 @@ const footerLinks = {
   ],
   resources: [
     { name: "How It Works", href: "/process" },
+    { name: "About Us", href: "/about" },
     { name: "FAQs", href: "/faqs" },
     { name: "Sell House Irish", href: "/sell-house-ireland" },
     { name: "Dublin 6 Agents", href: "/dublin-6-estate-agents" },

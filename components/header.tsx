@@ -8,6 +8,7 @@ import { Menu, Building2, ChevronRight } from "lucide-react"
 const navigationItems = [
   { title: "Compare Agents", href: "/#hero-form" },
   { title: "How it Works", href: "/process" },
+  { title: "About Us", href: "/about" },
   { title: "Coverage", href: "/areas" },
 ]
 
