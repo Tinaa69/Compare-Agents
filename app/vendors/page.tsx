@@ -67,7 +67,7 @@ const timeline = [
   {
     step: "Day 1",
     title: "Submit Property Details",
-    description: "Complete our brief form with your property information, estimated value, and preferred timeline.",
+    description: "Complete our brief form with your property information and preferred timeline.",
     icon: FileText,
   },
   {

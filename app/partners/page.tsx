@@ -29,7 +29,7 @@ const benefits = [
 
 function PartnerForm() {
   return (
-    <form className="space-y-8" action="/thank-you" method="get">
+    <form className="space-y-8" action="/api/send-lead" method="post">
       <input type="hidden" name="formType" value="partner" />
 
       {/* Company Information Section */}
@@ -337,16 +337,26 @@ export default function PartnersPage() {
           </div>
         </section>
 
+        <section className="bg-background py-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="rounded-3xl border border-border bg-primary p-8 text-center shadow-sm">
+              <p className="text-lg font-semibold text-primary-foreground">
+                Service available for properties across Leinster (soon to be nationwide)
+              </p>
+            </div>
+          </div>
+        </section>
+
       </main>
       <Footer />
 
       {/* Partner Form Modal */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Become a Partner Today</DialogTitle>
             <DialogDescription>
-              Fill out the form below and we'll get you set up to receive qualified leads within 24 hours.
+              Complete the form below and we’ll get you set up with qualified leads fast.
             </DialogDescription>
           </DialogHeader>
           <PartnerForm />

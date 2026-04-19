@@ -60,35 +60,30 @@ const timelines = [
   { value: "6-months-plus", label: "6+ months (planning ahead)" },
 ]
 
-const valueRanges = [
-  "Under €200,000",
-  "€200,000 - €350,000",
-  "€350,000 - €500,000",
-  "€500,000 - €750,000",
-  "€750,000 - €1,000,000",
-  "€1,000,000 - €1,500,000",
-  "€1,500,000 - €2,000,000",
-  "Over €2,000,000",
-]
-
-const rentalRanges = [
-  "Under €1,500/month",
-  "€1,500 - €2,000/month",
-  "€2,000 - €2,500/month",
-  "€2,500 - €3,000/month",
-  "€3,000 - €4,000/month",
-  "€4,000 - €5,000/month",
-  "Over €5,000/month",
-]
-
 export function LeadCaptureForm() {
   const router = useRouter()
   const [submitted, setSubmitted] = useState(false)
   const [serviceType, setServiceType] = useState("")
   const [consent, setConsent] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    const payload = Object.fromEntries(formData.entries())
+
+    const response = await fetch("/api/send-lead", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+
+    if (!response.ok) {
+      alert("Unable to send your lead right now. Please try again later.")
+      return
+    }
+
     setSubmitted(true)
     router.push("/thank-you")
   }
@@ -115,6 +110,7 @@ export function LeadCaptureForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
+      <input type="hidden" name="formType" value="contact" />
       {/* Service Type */}
       <div>
         <h3 className="font-semibold text-foreground">Service Required</h3>
@@ -122,7 +118,7 @@ export function LeadCaptureForm() {
           What type of service are you looking for?
         </p>
         <div className="mt-4">
-          <Select value={serviceType} onValueChange={setServiceType} required>
+          <Select name="serviceType" value={serviceType} onValueChange={setServiceType} required>
             <SelectTrigger>
               <SelectValue placeholder="Select service type" />
             </SelectTrigger>
@@ -146,9 +142,9 @@ export function LeadCaptureForm() {
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <Label htmlFor="propertyType">Property Type *</Label>
-            <Select required>
-              <SelectTrigger id="propertyType">
-                <SelectValue placeholder="Select property type" />
+            <Select name="propertyType" required>
+              <SelectTrigger id="propertyType" className="h-12">
+                <SelectValue placeholder="Property type" />
               </SelectTrigger>
               <SelectContent>
                 {propertyTypes.map((type) => (
@@ -161,9 +157,9 @@ export function LeadCaptureForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="location">Location / Area *</Label>
-            <Select required>
-              <SelectTrigger id="location">
-                <SelectValue placeholder="Select Ireland area" />
+            <Select name="location" required>
+              <SelectTrigger id="location" className="h-12">
+                <SelectValue placeholder="Location" />
               </SelectTrigger>
               <SelectContent>
                 {irelandAreas.map((area) => (
@@ -176,9 +172,9 @@ export function LeadCaptureForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="bedrooms">Number of Bedrooms *</Label>
-            <Select required>
-              <SelectTrigger id="bedrooms">
-                <SelectValue placeholder="Select bedrooms" />
+            <Select name="bedrooms" required>
+              <SelectTrigger id="bedrooms" className="h-12">
+                <SelectValue placeholder="Bedrooms" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="studio">Studio</SelectItem>
@@ -192,9 +188,9 @@ export function LeadCaptureForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="bathrooms">Number of Bathrooms *</Label>
-            <Select required>
-              <SelectTrigger id="bathrooms">
-                <SelectValue placeholder="Select bathrooms" />
+            <Select name="bathrooms" required>
+              <SelectTrigger id="bathrooms" className="h-12">
+                <SelectValue placeholder="Bathrooms" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="1">1 Bathroom</SelectItem>
@@ -205,31 +201,9 @@ export function LeadCaptureForm() {
             </Select>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="valuation">
-              {serviceType === "letting" || serviceType === "management" 
-                ? "Expected Monthly Rent *" 
-                : "Estimated Property Value *"}
-            </Label>
-            <Select required>
-              <SelectTrigger id="valuation">
-                <SelectValue placeholder="Select range" />
-              </SelectTrigger>
-              <SelectContent>
-                {(serviceType === "letting" || serviceType === "management" 
-                  ? rentalRanges 
-                  : valueRanges
-                ).map((range) => (
-                  <SelectItem key={range} value={range.toLowerCase().replace(/[€,\s/]+/g, '-')}>
-                    {range}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="space-y-2">
             <Label htmlFor="timeline">Timeline *</Label>
-            <Select required>
-              <SelectTrigger id="timeline">
+            <Select name="timeline" required>
+              <SelectTrigger id="timeline" className="h-12">
                 <SelectValue placeholder="When do you need an agent?" />
               </SelectTrigger>
               <SelectContent>
@@ -246,6 +220,7 @@ export function LeadCaptureForm() {
           <Label htmlFor="address">Property Address (Optional)</Label>
           <Input 
             id="address" 
+            name="address"
             placeholder="Full address helps agents provide more accurate offers"
           />
           <p className="text-xs text-muted-foreground">
@@ -261,21 +236,31 @@ export function LeadCaptureForm() {
           How should agents reach you?
         </p>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <div className="space-y-2">
-            <Label htmlFor="firstName">First Name *</Label>
-            <Input id="firstName" required />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="lastName">Last Name *</Label>
-            <Input id="lastName" required />
+          <div className="space-y-2 sm:col-span-2">
+            <Label htmlFor="fullName">Name *</Label>
+            <Input id="fullName" name="fullName" placeholder="Full name" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email Address *</Label>
-            <Input id="email" type="email" required />
+            <Input id="email" name="email" type="email" placeholder="you@example.com" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number *</Label>
-            <Input id="phone" type="tel" placeholder="+353" required />
+            <Input id="phone" name="phone" type="tel" placeholder="+353" required />
+          </div>
+          <div className="space-y-2 sm:col-span-2">
+            <Label htmlFor="contactMethod">Preferred Method of Contact *</Label>
+            <Select name="contactMethod" required>
+              <SelectTrigger id="contactMethod" className="h-12">
+                <SelectValue placeholder="Phone call, email, WhatsApp, or any" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="phone">Phone call</SelectItem>
+                <SelectItem value="email">Email</SelectItem>
+                <SelectItem value="whatsapp">WhatsApp</SelectItem>
+                <SelectItem value="any">Any of these</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </div>
@@ -285,6 +270,7 @@ export function LeadCaptureForm() {
         <Label htmlFor="notes">Additional Information (Optional)</Label>
         <Textarea 
           id="notes" 
+          name="notes"
           placeholder="Any specific requirements or questions for agents?"
           rows={4}
         />

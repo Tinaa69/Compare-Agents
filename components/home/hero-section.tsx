@@ -178,8 +178,9 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
   }
 
   return (
-    <form id="hero-form" className="space-y-4" action="/thank-you" method="get">
+    <form id="hero-form" className="space-y-4" action="/api/send-lead" method="post">
       <input type="hidden" name="service" value={service} />
+      <input type="hidden" name="formType" value="hero" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-2 relative">
@@ -265,10 +266,10 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
             name="propertyType"
             required
             defaultValue=""
-            className="h-12 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+            className="h-14 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
           >
             <option value="" disabled>
-              Select type
+              Type
             </option>
             {propertyTypes.map((type) => (
               <option key={type} value={type}>
@@ -287,10 +288,10 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
             name="bedrooms"
             required
             defaultValue=""
-            className="h-12 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+            className="h-14 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
           >
             <option value="" disabled>
-              Select bedrooms
+              Bedrooms
             </option>
             {bedrooms.map((count) => (
               <option key={count} value={count}>
@@ -309,10 +310,10 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
             name="bathrooms"
             required
             defaultValue=""
-            className="h-12 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+            className="h-14 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
           >
             <option value="" disabled>
-              Select bathrooms
+              Bathrooms
             </option>
             {bathrooms.map((count) => (
               <option key={count} value={count}>
@@ -346,10 +347,10 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
             name="condition"
             required
             defaultValue=""
-            className="h-12 w-full rounded-xl border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+            className="h-14 w-full rounded-xl border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
           >
             <option value="" disabled>
-              Select condition
+              Condition
             </option>
             {conditions.map((condition) => (
               <option key={condition} value={condition}>
@@ -369,10 +370,10 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
               name="extension"
               required
               defaultValue=""
-              className="h-12 w-full rounded-xl border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="h-14 w-full rounded-xl border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
             >
               <option value="" disabled>
-                Select option
+                Option
               </option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -390,7 +391,7 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
           name="timeline"
           required
           defaultValue=""
-          className="h-12 w-full rounded-xl border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+          className="h-14 w-full rounded-xl border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
         >
           <option value="" disabled>
             When would you like to {service === "sale" ? "sell" : "let"}?
@@ -403,9 +404,89 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
         </select>
       </div>
 
+      <div className="space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="space-y-2 sm:col-span-2">
+            <label htmlFor="fullName" className="text-sm font-medium text-foreground">
+              Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="fullName"
+              name="fullName"
+              type="text"
+              required
+              placeholder="Full name"
+              className="h-12 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="email" className="text-sm font-medium text-foreground">
+              Email address <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+              className="h-12 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="phone" className="text-sm font-medium text-foreground">
+              Phone number <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              required
+              placeholder="+353"
+              className="h-12 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+            />
+          </div>
+
+          <div className="space-y-2 sm:col-span-2">
+            <label htmlFor="contactMethod" className="text-sm font-medium text-foreground">
+              Preferred method of contact <span className="text-red-500">*</span>
+            </label>
+            <select
+              id="contactMethod"
+              name="contactMethod"
+              required
+              defaultValue=""
+              className="h-14 w-full rounded-xl border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+            >
+              <option value="" disabled>
+                Phone call, email, WhatsApp or any
+              </option>
+              <option value="phone">Phone call</option>
+              <option value="email">Email</option>
+              <option value="whatsapp">WhatsApp</option>
+              <option value="any">Any of these</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label htmlFor="notes" className="text-sm font-medium text-foreground">
+            Additional info
+          </label>
+          <textarea
+            id="notes"
+            name="notes"
+            rows={4}
+            placeholder="Any specific requirements or questions for agents?"
+            className="w-full rounded-xl border border-input bg-background px-3 py-3 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+          />
+        </div>
+      </div>
+
       <button
         type="submit"
-        className="w-full h-12 rounded-xl bg-accent text-base font-semibold text-accent-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-accent/90 flex items-center justify-center gap-2"
+        className="w-full h-14 rounded-xl bg-accent text-base font-semibold text-accent-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-accent/90 flex items-center justify-center gap-2"
       >
         Request Agent Offers
         <ChevronRight className="h-4 w-4" />

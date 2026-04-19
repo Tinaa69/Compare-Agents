@@ -56,16 +56,16 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-6">
+        <div className="grid gap-8 lg:grid-cols-[1.5fr_2fr]">
           {/* Brand */}
-          <div className="md:col-span-2 lg:col-span-2">
+          <div>
             <Link href="/" className="flex items-center gap-2">
               <Building2 className="h-7 w-7" />
               <span className="text-xl font-semibold tracking-tight">
                 CompareAgents<span className="text-accent">.ie</span>
               </span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-primary-foreground/80">
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-primary-foreground/80">
               Compare verified real estate agents, review fee range, marketing strategy and performance metrics, receive 4 competitive offers.
             </p>
             <div className="mt-6 flex items-center gap-2 text-sm">
@@ -77,7 +77,6 @@ export function Footer() {
               <span>4 quotes in 24hrs</span>
             </div>
 
-            {/* Contact Info */}
             <div className="mt-6 space-y-2">
               <div className="flex items-center gap-2 text-sm text-primary-foreground/80">
                 <Mail className="h-4 w-4 shrink-0" />
@@ -98,98 +97,22 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">
-              Services
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Residential */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">
-              Residential
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.residential.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Locations */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">
-              Locations
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.locations.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/60">
-              Resources
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Partner CTA */}
-        <div className="mt-12 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 p-6">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-            <div>
-              <h3 className="font-semibold text-primary-foreground">Are you an estate agent?</h3>
-              <p className="mt-1 text-sm text-primary-foreground/80">
-                Get more customers by partnering with CompareAgents.ie
-              </p>
+          {/* Partner CTA */}
+          <div className="rounded-3xl border border-primary-foreground/10 bg-primary-foreground/5 p-8 shadow-sm">
+            <div className="flex h-full flex-col justify-between gap-6">
+              <div>
+                <h3 className="text-2xl font-semibold text-primary-foreground">Become a Partner</h3>
+                <p className="mt-3 text-sm text-primary-foreground/80 leading-relaxed">
+                  Join CompareAgents.ie to receive high-intent leads, grow your pipeline, and win more instructions across Ireland.
+                </p>
+              </div>
+              <Link
+                href="/partners"
+                className="inline-flex w-full items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90"
+              >
+                Become a Partner
+              </Link>
             </div>
-            <Link
-              href="/partners"
-              className="inline-flex items-center justify-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90"
-            >
-              Become a Partner
-            </Link>
           </div>
         </div>
 
