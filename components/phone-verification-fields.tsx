@@ -49,7 +49,7 @@ export function PhoneVerificationFields({
     }
 
     setRequestToken(result.requestToken)
-    setMessage(result.code ? `Test code: ${result.code}` : "Code sent.")
+    setMessage(result.code ? `${result.message} Test code: ${result.code}` : result.message)
   }
 
   const verifyCode = async () => {

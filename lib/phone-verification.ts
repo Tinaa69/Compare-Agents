@@ -60,7 +60,25 @@ function hashCode(phone: string, code: string) {
 }
 
 export function normalizePhone(phone: string) {
-  return phone.replace(/[\s().-]/g, "").trim()
+  const compactPhone = phone.replace(/[\s().-]/g, "").trim()
+
+  if (compactPhone.startsWith("00")) {
+    return `+${compactPhone.slice(2)}`
+  }
+
+  if (compactPhone.startsWith("+")) {
+    return compactPhone
+  }
+
+  if (compactPhone.startsWith("353")) {
+    return `+${compactPhone}`
+  }
+
+  if (compactPhone.startsWith("0")) {
+    return `+353${compactPhone.slice(1)}`
+  }
+
+  return compactPhone
 }
 
 export function createVerificationCode() {

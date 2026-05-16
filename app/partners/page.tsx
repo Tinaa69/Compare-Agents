@@ -306,10 +306,10 @@ export default function PartnersPage() {
                 Leads are delivered to you in real time, so you can respond first and win more instructions. Whether you prefer mobile alerts, email, or direct integration into your workflow, you’ll never miss an opportunity.
               </p>
               <p className="mt-6 text-lg text-foreground leading-relaxed">
-                We’re a proudly Ireland-owned company, built specifically for the Ireland property market. That means better quality enquiries, stronger local demand, and more opportunities for you to grow your pipeline.
+                We’re a proudly Irish-owned company, built specifically for the Irish property market. That means better quality enquiries, stronger local demand, and more opportunities for you to grow your pipeline.
               </p>
               <p className="mt-6 text-lg text-foreground leading-relaxed">
-                You stay in full control. Target the exact type of clients you want, from homeowners in Dublin to landlords in Waterford, and we’ll match you with the right opportunities to maximise your results.
+                You stay in full control. Target the exact type of clients you want, from homeowners in Dublin to landlords in Wicklow, and we’ll match you with the right opportunities to maximise your results.
               </p>
             </div>
           </div>
