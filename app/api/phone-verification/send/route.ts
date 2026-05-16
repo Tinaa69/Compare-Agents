@@ -18,7 +18,9 @@ async function sendSms(to: string, message: string) {
 
   if (!accountSid || !authToken || (!from && !messagingServiceSid)) {
     if (process.env.NODE_ENV === "development") return false
-    throw new Error("SMS settings are not configured.")
+    throw new Error(
+      "SMS settings are not configured. Set TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN and either TWILIO_FROM_NUMBER or TWILIO_MESSAGING_SERVICE_SID.",
+    )
   }
 
   const body = new URLSearchParams({
@@ -45,7 +47,8 @@ async function sendSms(to: string, message: string) {
   )
 
   if (!response.ok) {
-    throw new Error("Unable to send verification code.")
+    const errorBody = await response.text()
+    throw new Error(`Unable to send verification code. ${errorBody}`)
   }
 
   return true
@@ -56,7 +59,7 @@ export async function POST(req: Request) {
     const body = (await req.json()) as { phone?: string }
     const phone = normalizePhone(body.phone ?? "")
 
-    if (!phone || phone.length < 8) {
+    if (!phone || phone.length < 8 || !phone.startsWith("+")) {
       return NextResponse.json({ error: "Enter a valid phone number." }, { status: 400 })
     }
 
@@ -66,10 +69,24 @@ export async function POST(req: Request) {
 
     return NextResponse.json({
       requestToken,
-      ...(process.env.NODE_ENV === "development" && !smsSent ? { code } : {}),
+      smsSent,
+      ...(process.env.NODE_ENV === "development" && !smsSent
+        ? {
+            code,
+            message: "SMS is not configured locally. Use this test code to verify the flow.",
+          }
+        : { message: "Verification code sent." }),
     })
   } catch (error) {
     console.error("Phone verification send error:", error)
-    return NextResponse.json({ error: "Unable to send verification code." }, { status: 500 })
+    const errorMessage = error instanceof Error ? error.message : "Unable to send verification code."
+
+    return NextResponse.json(
+      {
+        error:
+          process.env.NODE_ENV === "development" ? errorMessage : "Unable to send verification code.",
+      },
+      { status: 500 },
+    )
   }
 }
