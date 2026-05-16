@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Shield, CheckCircle } from "lucide-react"
+import { PhoneVerificationFields } from "@/components/phone-verification-fields"
 
 const propertyTypes = [
   "Apartment",
@@ -65,11 +66,17 @@ export function LeadCaptureForm() {
   const [submitted, setSubmitted] = useState(false)
   const [serviceType, setServiceType] = useState("")
   const [consent, setConsent] = useState(false)
+  const [phone, setPhone] = useState("")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     const payload = Object.fromEntries(formData.entries())
+
+    if (!payload.phoneVerificationToken) {
+      alert("Please verify your phone number before submitting.")
+      return
+    }
 
     const response = await fetch("/api/send-lead", {
       method: "POST",
@@ -244,10 +251,7 @@ export function LeadCaptureForm() {
             <Label htmlFor="email">Email Address *</Label>
             <Input id="email" name="email" type="email" placeholder="you@example.com" required />
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="phone">Phone Number *</Label>
-            <Input id="phone" name="phone" type="tel" placeholder="+353" required />
-          </div>
+          <PhoneVerificationFields phone={phone} setPhone={setPhone} />
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="contactMethod">Preferred Method of Contact *</Label>
             <Select name="contactMethod" required>

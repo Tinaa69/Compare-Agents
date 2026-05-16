@@ -1,9 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import { ChevronRight, X } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useState } from "react"
+import { PhoneVerificationFields } from "@/components/phone-verification-fields"
 
 const propertyTypes = [
   "Apartment",
@@ -152,6 +153,7 @@ export function HeroSection() {
 function PropertyForm({ service }: { service: "sale" | "let" }) {
   const [addressInput, setAddressInput] = useState("")
   const [eircodeInput, setEircodeInput] = useState("")
+  const [phone, setPhone] = useState("")
   const [showAddressSuggestions, setShowAddressSuggestions] = useState(false)
   const [showEircodeSuggestions, setShowEircodeSuggestions] = useState(false)
 
@@ -177,8 +179,33 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
     setShowEircodeSuggestions(false)
   }
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const formData = new FormData(event.currentTarget)
+    const payload = Object.fromEntries(formData.entries())
+
+    if (!payload.phoneVerificationToken) {
+      alert("Please verify your phone number before submitting.")
+      return
+    }
+
+    const response = await fetch("/api/send-lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
+
+    if (!response.ok) {
+      alert("Unable to send your lead right now. Please try again later.")
+      return
+    }
+
+    window.location.href = "/thank-you"
+  }
+
   return (
-    <form id="hero-form" className="space-y-4" action="/api/send-lead" method="post">
+    <form id="hero-form" className="space-y-4" onSubmit={handleSubmit}>
       <input type="hidden" name="service" value={service} />
       <input type="hidden" name="formType" value="hero" />
 
@@ -434,19 +461,7 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
             />
           </div>
 
-          <div className="space-y-2">
-            <label htmlFor="phone" className="text-sm font-medium text-foreground">
-              Phone number <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              required
-              placeholder="+353"
-              className="h-12 w-full rounded-xl border border-input bg-background px-3 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
-            />
-          </div>
+          <PhoneVerificationFields phone={phone} setPhone={setPhone} />
 
           <div className="space-y-2 sm:col-span-2">
             <label htmlFor="contactMethod" className="text-sm font-medium text-foreground">
@@ -494,5 +509,4 @@ function PropertyForm({ service }: { service: "sale" | "let" }) {
     </form>
   )
 }
-
 

@@ -51,7 +51,7 @@ const methodology = [
   },
   {
     title: "Price Bracket Expertise",
-    description: "Agent effectiveness varies by property value. Our matching considers historical performance within your property's estimated price range.",
+    description: "Agent performance varies by property value. Our algorithm matches you with agents who have demonstrated success in your property's price range.",
   },
   {
     title: "Property Type Alignment",

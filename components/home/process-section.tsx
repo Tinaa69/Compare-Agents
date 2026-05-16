@@ -4,7 +4,7 @@ const steps = [
   {
     step: "01",
     title: "Submit Property Details",
-    description: "Provide your property information including location, type, estimated value, size and condition.",
+    description: "Provide your property information including location, type, size and condition.",
     icon: FileText,
   },
   {

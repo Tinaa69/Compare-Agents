@@ -29,18 +29,18 @@ const benefits = [
 
 function PartnerForm() {
   return (
-    <form className="space-y-8" action="/api/send-lead" method="post">
+    <form className="space-y-5" action="/api/send-lead" method="post">
       <input type="hidden" name="formType" value="partner" />
 
       {/* Company Information Section */}
-      <div className="space-y-6">
+      <div className="space-y-4">
         <div className="border-b border-border pb-2">
-          <h3 className="text-lg font-semibold text-foreground">Company Information</h3>
+          <h3 className="text-base font-semibold text-foreground">Company Information</h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label htmlFor="companyName" className="block text-sm font-medium text-foreground">
+            <label htmlFor="companyName" className="block text-xs font-medium text-foreground">
               Company name <span className="text-red-500">*</span>
             </label>
             <input
@@ -48,13 +48,13 @@ function PartnerForm() {
               name="companyName"
               type="text"
               required
-              className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
               placeholder="Enter your company name"
             />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="companyDirector" className="block text-sm font-medium text-foreground">
+            <label htmlFor="companyDirector" className="block text-xs font-medium text-foreground">
               Company director <span className="text-red-500">*</span>
             </label>
             <input
@@ -62,29 +62,29 @@ function PartnerForm() {
               name="companyDirector"
               type="text"
               required
-              className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
               placeholder="Director's full name"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="companyAddress" className="block text-sm font-medium text-foreground">
+          <label htmlFor="companyAddress" className="block text-xs font-medium text-foreground">
             Company address <span className="text-red-500">*</span>
           </label>
           <textarea
             id="companyAddress"
             name="companyAddress"
             required
-            rows={3}
-            className="w-full rounded-lg border border-input bg-background px-4 py-3 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20 resize-none"
+            rows={2}
+            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20 resize-none"
             placeholder="Enter your full company address"
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label htmlFor="companyEircode" className="block text-sm font-medium text-foreground">
+            <label htmlFor="companyEircode" className="block text-xs font-medium text-foreground">
               Company eircode <span className="text-red-500">*</span>
             </label>
             <input
@@ -92,13 +92,13 @@ function PartnerForm() {
               name="companyEircode"
               type="text"
               required
-              className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
               placeholder="Enter eircode"
             />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="yearsInBusiness" className="block text-sm font-medium text-foreground">
+            <label htmlFor="yearsInBusiness" className="block text-xs font-medium text-foreground">
               Years in business <span className="text-red-500">*</span>
             </label>
             <input
@@ -107,7 +107,7 @@ function PartnerForm() {
               type="number"
               required
               min="0"
-              className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
               placeholder="e.g. 5"
             />
           </div>
@@ -115,14 +115,14 @@ function PartnerForm() {
       </div>
 
       {/* Contact Information Section */}
-      <div className="space-y-6">
+      <div className="space-y-4">
         <div className="border-b border-border pb-2">
-          <h3 className="text-lg font-semibold text-foreground">Contact Information</h3>
+          <h3 className="text-base font-semibold text-foreground">Contact Information</h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label htmlFor="directorEmail" className="block text-sm font-medium text-foreground">
+            <label htmlFor="directorEmail" className="block text-xs font-medium text-foreground">
               Director email <span className="text-red-500">*</span>
             </label>
             <input
@@ -130,13 +130,13 @@ function PartnerForm() {
               name="directorEmail"
               type="email"
               required
-              className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
               placeholder="director@company.com"
             />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="leadsEmail" className="block text-sm font-medium text-foreground">
+            <label htmlFor="leadsEmail" className="block text-xs font-medium text-foreground">
               Email for leads <span className="text-red-500">*</span>
             </label>
             <input
@@ -144,7 +144,7 @@ function PartnerForm() {
               name="leadsEmail"
               type="email"
               required
-              className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
               placeholder="leads@company.com"
             />
           </div>
@@ -152,14 +152,14 @@ function PartnerForm() {
       </div>
 
       {/* Business Details Section */}
-      <div className="space-y-6">
+      <div className="space-y-4">
         <div className="border-b border-border pb-2">
-          <h3 className="text-lg font-semibold text-foreground">Business Details</h3>
+          <h3 className="text-base font-semibold text-foreground">Business Details</h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="space-y-2">
-            <label htmlFor="agencyType" className="block text-sm font-medium text-foreground">
+            <label htmlFor="agencyType" className="block text-xs font-medium text-foreground">
               Type of agency <span className="text-red-500">*</span>
             </label>
             <select
@@ -167,7 +167,7 @@ function PartnerForm() {
               name="agencyType"
               required
               defaultValue=""
-              className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
             >
               <option value="" disabled>Select agency type</option>
               <option value="sales-lettings">Sales and lettings</option>
@@ -177,7 +177,7 @@ function PartnerForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="companySize" className="block text-sm font-medium text-foreground">
+            <label htmlFor="companySize" className="block text-xs font-medium text-foreground">
               Company size <span className="text-red-500">*</span>
             </label>
             <select
@@ -185,7 +185,7 @@ function PartnerForm() {
               name="companySize"
               required
               defaultValue=""
-              className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
             >
               <option value="" disabled>Select company size</option>
               <option value="1-10">1-10 employees</option>
@@ -195,7 +195,7 @@ function PartnerForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="psraNumber" className="block text-sm font-medium text-foreground">
+            <label htmlFor="psraNumber" className="block text-xs font-medium text-foreground">
               PSRA Licence Number <span className="text-red-500">*</span>
             </label>
             <input
@@ -203,14 +203,14 @@ function PartnerForm() {
               name="psraNumber"
               type="text"
               required
-              className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
+              className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
               placeholder="Enter PSRA number"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="leadsRequired" className="block text-sm font-medium text-foreground">
+          <label htmlFor="leadsRequired" className="block text-xs font-medium text-foreground">
             Do you require leads for <span className="text-red-500">*</span>
           </label>
           <select
@@ -218,7 +218,7 @@ function PartnerForm() {
             name="leadsRequired"
             required
             defaultValue=""
-            className="w-full h-12 rounded-lg border border-input bg-background px-4 text-base text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
+            className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20"
           >
             <option value="" disabled>Select lead type</option>
             <option value="sales-lettings">Sales and lettings</option>
@@ -228,12 +228,12 @@ function PartnerForm() {
         </div>
       </div>
 
-      <div className="pt-6 border-t border-border">
+      <div className="pt-4 border-t border-border">
         <button
           type="submit"
-          className="w-full h-14 rounded-lg bg-accent text-lg font-semibold text-accent-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-xl flex items-center justify-center gap-2"
+          className="w-full h-11 rounded-md bg-accent text-base font-semibold text-accent-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-xl flex items-center justify-center gap-2"
         >
-          Become a Partner : Get Started
+          Become a Partner
         </button>
       </div>
     </form>
@@ -275,20 +275,20 @@ export default function PartnersPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="overflow-hidden rounded-3xl shadow-xl">
                   <Image
-                    src="/images/partner-1.png"
-                    alt="For sale home in Dublin"
+                    src="/images/partner-meeting-laptop.jpg"
+                    alt="Estate agency team reviewing lead opportunities together"
                     width={720}
                     height={520}
-                    className="h-[260px] w-full object-cover"
+                    className="h-[260px] w-full object-cover object-[70%_55%]"
                   />
                 </div>
                 <div className="overflow-hidden rounded-3xl shadow-xl">
                   <Image
-                    src="/images/partner-2.png"
-                    alt="Country home for sale"
+                    src="/images/partner-office-discussion.jpg"
+                    alt="Agents discussing client enquiries in an office"
                     width={720}
                     height={520}
-                    className="h-[260px] w-full object-cover"
+                    className="h-[260px] w-full object-cover object-[78%_70%]"
                   />
                 </div>
               </div>
@@ -341,7 +341,7 @@ export default function PartnersPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-3xl border border-border bg-primary p-8 text-center shadow-sm">
               <p className="text-lg font-semibold text-primary-foreground">
-                Service available for properties across Leinster (soon to be nationwide)
+                Currently serving properties across Leinster, with nationwide expansion planned
               </p>
             </div>
           </div>
@@ -352,7 +352,7 @@ export default function PartnersPage() {
 
       {/* Partner Form Modal */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-2xl max-h-[88vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Become a Partner Today</DialogTitle>
             <DialogDescription>
